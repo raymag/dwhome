@@ -10,10 +10,10 @@
     <label>Número: <input type="number" name="n2"/></label><br/>
     <fieldset>
       <legend>Função</legend>
-      <label>Somar<input type="radio" name="func" value="somar"></label><br/>
-      <label>Subtrair<input type="radio" name="func" value="subtrair"></label><br/>
-      <label>Multiplicar<input type="radio" name="func" value="multiplicar"></label><br/>
-      <label>Dividir<input type="radio" name="func" value="dividir"></label><br/>
+      <label>Somar<input type="radio" name="func" value="+" checked></label><br/>
+      <label>Subtrair<input type="radio" name="func" value="-"></label><br/>
+      <label>Multiplicar<input type="radio" name="func" value="*"></label><br/>
+      <label>Dividir<input type="radio" name="func" value="/"></label><br/>
     </fieldset>
     <input type="submit" value="Executar"/>
   </form>
@@ -21,22 +21,27 @@
 echo "<fieldset><legend>Resultado</legend>";
 function calc($n1, $n2, $op){
   switch ($op) {
-    case 'somar':
+    case '+':
       $result = $n1+$n2;
       break;
-    case 'subtrair':
+    case '-':
       $result = $n1-$n2;
       break;
-    case 'multiplicar':
+    case '*':
       $result = $n1*$n2;
       break;
-    case 'dividir':
+    case '/':
       $result = $n1/$n2;
       break;
   }
   return $result;
 }
-echo calc($_POST["n1"], $_POST["n2"], $_POST["func"]);
+if( ( isset($_POST["n1"]) && is_numeric($_POST["n1"]) )
+	&& ( isset($_POST["n2"]) && is_numeric($_POST["n2"]) )){
+	echo $_POST["n1"]." ".$_POST["func"]
+	." ".$_POST["n2"]." = "
+	.calc($_POST["n1"], $_POST["n2"], $_POST["func"]);
+}
 echo "</fieldset>";
 ?>
 </body>

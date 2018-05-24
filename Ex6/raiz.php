@@ -21,7 +21,9 @@ function raiz($num){
 
 echo "<fieldset>";
 echo "<legend>Resultado</legend>";
-echo "√".$_POST["num"]." = ".raiz($_POST["num"]);
+if(isset($_POST["num"]) && is_numeric($_POST["num"])){
+	echo "√".$_POST["num"]." = ".raiz($_POST["num"]);
+}
 echo "</fieldset>";
 ?>
 </body>
