@@ -1,3 +1,8 @@
 msconfig
 services.msc
 netplwiz
+YUMI
+Windows7-USB-DVD-tools
+
+
+/home/Sistemas_Operacionais/ubuntu-18.04-desktop-amd64.iso
