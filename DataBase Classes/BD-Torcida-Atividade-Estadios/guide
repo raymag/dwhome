@@ -1,0 +1,141 @@
+1 - Criando tabela de estadios:
+CREATE TABLE estadios(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(80),
+    apelido varchar(60),
+    capacidade int
+);
+
+2 - Adicionando uma nova coluna na tabela clubes:
+ALTER TABLE clubes
+	ADD COLUMN estadio_oficial int;
+
+3 - Definindo estadio_oficial como chave estrangeira:
+ALTER TABLE clubes
+	ADD FOREIGN KEY (estadio_oficial) REFERENCES estadios(id);
+
+4 -Pesquisando dados e elaborando script para retornar os comandos mysql para inserção dos dados.
+
+5 - Inserção dos dados com:
+INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Raimundo Sampaio", "Independência", 23018);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Joaquim Américo Guimarães", "Arena da Baixada", 42370);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Complexo Esportivo Cultural Octávio Mangabeira", "Fonte Nova", 47907);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Olímpico Nilton Santos", "Nilton Santos", 44661);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Governador Plácido Castelo", "Arena Castelão", 63903);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Arena Condá", "Arena Condá", 20089);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Arena Corinthians", "Itaquerão", 47605);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Governador Magalhães Pinto", "Mineirão", 61846);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Luso-Brasileiro", "Ilha do Urubu", 20500);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Jornalista Mário Filho", "Maracanã", 78838);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Arena do Grêmio", "Arena do Grêmio", 55662);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio José Pinheiro Borda", "Gigante da Beira-Rio", 50128);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Allianz Parque", "Arena Palmeiras", 43713);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Durival Britto e Silva", "Vila Capanema", 20083);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Urbano Caldeira", "Vila Belmiro", 16068);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Cícero Pompeu de Toledo", "Morumbi", 77011);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Adelmar da Costa Carvalho", "Caldeirão da Ilha", 30000);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Vasco da Gama", "São Januário", 21880);
+
+	INSERT INTO estadios (nome, apelido, capacidade) VALUES ("Estádio Manoel Barradas", "Barradão", 30618);
+
+6 - Criando relações, como a fonte é a mesma. É possível usar outro script:
+
+UPDATE clubes
+SET estadio_oficial = 1
+WHERE id = 1;
+
+UPDATE clubes
+SET estadio_oficial = 1
+WHERE id = 2;
+
+UPDATE clubes
+SET estadio_oficial = 2
+WHERE id = 3;
+
+UPDATE clubes
+SET estadio_oficial = 3
+WHERE id = 4;
+
+UPDATE clubes
+SET estadio_oficial = 4
+WHERE id = 5;
+
+UPDATE clubes
+SET estadio_oficial = 5
+WHERE id = 6;
+
+UPDATE clubes
+SET estadio_oficial = 6
+WHERE id = 7;
+
+UPDATE clubes
+SET estadio_oficial = 7
+WHERE id = 8;
+
+UPDATE clubes
+SET estadio_oficial = 8
+WHERE id = 9;
+
+UPDATE clubes
+SET estadio_oficial = 9
+WHERE id = 10;
+
+UPDATE clubes
+SET estadio_oficial = 10
+WHERE id = 11;
+
+UPDATE clubes
+SET estadio_oficial = 11
+WHERE id = 12;
+
+UPDATE clubes
+SET estadio_oficial = 12
+WHERE id = 13;
+
+UPDATE clubes
+SET estadio_oficial = 13
+WHERE id = 14;
+
+UPDATE clubes
+SET estadio_oficial = 14
+WHERE id = 15;
+
+UPDATE clubes
+SET estadio_oficial = 15
+WHERE id = 16;
+
+UPDATE clubes
+SET estadio_oficial = 16
+WHERE id = 17;
+
+UPDATE clubes
+SET estadio_oficial = 17
+WHERE id = 18;
+
+UPDATE clubes
+SET estadio_oficial = 18
+WHERE id = 19;
+
+UPDATE clubes
+SET estadio_oficial = 19
+WHERE id = 20;
+
+7 - Fim.
+
