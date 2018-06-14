@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="raymag">
+    <title>Tooltip</title>
+    <style>
+body{
+    padding: 15px;
+    font-family: sans-serif;
+}
+.tooltip{
+    background: tomato;
+    color: #222;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    width: 300px;
+    box-shadow: 4px 0px 2px #AAA;
+    user-select: none;
+}
+.tooltip::before{
+    border: 20px solid transparent;
+    border-right-color: tomato;
+    content: "";
+    top: 20px;
+    left: -40px;
+    position: absolute;
+}
+    </style>
+</head>
+<body>
+    <div class="tooltip">
+        <p>Lorem ipsum dolor sit amet
+             consectetur adipisicing 
+             elit. Vel aliquid, dignissimos
+              omnis quisquam nulla accusamus 
+              enim, facere saepe rerum,
+               nihil dolore magnam placeat 
+               libero pariatur deserunt laborum 
+               voluptates est odio!Autem accusamus
+                aliquam magnam eius animi doloremque
+                 vero blanditiis alias dolores ad,
+                  soluta recusandae eligendi sunt
+                   obcaecati. Expedita fuga,
+                    minima illum et, vel aliquid ipsum
+                     fugiat quisquam possimus dicta
+                      architecto.</p>
+    </div>
+</body>
+</html>
