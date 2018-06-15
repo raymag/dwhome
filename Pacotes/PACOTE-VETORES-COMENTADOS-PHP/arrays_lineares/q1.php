@@ -12,7 +12,7 @@ echo "<style>body{background:#cdcdcd;font-size:25px;}</style><center>";
 	da casa (índice). Tudo isso deve ser feito usando funções de repetição.
 
 	Para esse exemplo, nós estaremos usando a função "for", mas também poderíamos
-	ter feito com a função "while".
+	fazê-lo com a função "while".
 */
 
 /*
