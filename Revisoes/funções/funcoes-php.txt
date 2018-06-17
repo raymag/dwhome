@@ -1,0 +1,65 @@
+Funções - > São trechos de código que podem ser guardados e reutilizados sempre que necessário. 
+_________________________________________________________________________________
+- phpinfo() - > Retorna um conjunto de informações relacionadas ao PHP e ao servidor.
+
+- sqrt(número) -> Retorna a raiz quadrada do número passado como argumento.
+
+- number_format(número, casas_decimais) -> Retorna o valor formatado do número passado como parâmetro.
+
+- is_numeric(valor) -> Testa se o valor passado é  um valor numérico.
+
+- strtolower(string) -> Retorna uma string (texto) com caracteres minúsculos.
+
+- strtoupper(string) -> Retorna uma string (texto) com caracteres maiúsculos;
+
+- ucfirst(string) -> Retorna uma string com a primeira letra maiúscula.
+
+- str_replace(c_busca, c_substituicao, str_modificada) -> Substitui trechos de uma string.
+
+- substr(string, inicio, qnt_c) - > Retorna um pedaço de uma string.
+
+- strlen(string) -> Retorna a quantidade de caracteres do parâmetro.
+
+- empty(string)-> Retorna verdadeiro se a string estiver vazia.
+
+- isset(variavel) -> Verifica se a variável existe ou já foi definida.
+____________________Funções usadas em Arrays______________________________________
+
+- is_array($array) -> Verifica se uma variável é um array (vetor).
+
+- in_array("valor", $array) - > Verifica se um valor existe dentro de um array(vetor).
+
+- array_keys($array) -> Retorna todas as chaves de um array.
+
+- sort($array) -> Ordena um array (Troca os índices).
+
+- asort($array) -> Ordena um array (Não troca os índices).
+
+- count($array) -> Retorna a quantidade de elementos de um array(vetor).
+
+- array_merge($array1, $array2) -> Funde um ou mais arrays.
+
+- explode(delimitador, string) -> Divide uma string com base em um delimitador (Retorna um vetor/array).
+
+- implode(delimitador, $array) -> Junta elementos de um array em uma string.
+
+- arrray_unique($array) -> Remove os elementos repetidos de um array/vetor.
+________________________________________________________________________________________
+
+- checkdate($mes, $dia, $ano)  -> Verifica se uma data está correta.
+
+- date("formato") -> Retorna a data com base no formato escolhido.
+
+- time() - > Retorna o timestamp (Segundos passados desde 1º de janeiro de 1970).
+
+- getdate($timestamp) -> Transforma o timestamp em uma data.
+
+- header("location: http://baixadaegua.com") -> Redireciona o usuário para o endereço especificado. Obs: baixadaegua é só um exemplo.
+
+- session_start() -> Permite o uso de variáveis globais.
+
+- unset(variavel) -> Muito usada para excluir variáveis globais.
+
+cerca de 29 funções.
+
+

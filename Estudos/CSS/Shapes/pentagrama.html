@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="raymag">
+    <title>CSS3 Shapes</title>
+    <style>
+    body{
+        background: #999;
+        padding: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pentagram{
+        width: 200px;
+        position: relative;
+        border-width: 100px 30px 0;
+        border-style: solid;
+        border-color: chartreuse transparent;
+        transform: scale(2);
+    }
+    .pentagram:before{
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -155px;
+        left: -30px;
+        border-width: 0 130px 56px;
+        border-style: solid;
+        border-color: transparent transparent chartreuse;
+    }
+    </style>
+</head>
+<body> 
+    <div class="pentagram">
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="raymag">
+    <title>CSS3 Shapes</title>
+    <style>
+    body{
+        background: #999;
+        padding: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pacman{
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        border-width: 200px;
+        border-style: solid;
+        border-color:  #ffd900 transparent #ffd900 #ffd900;
+        background: linear-gradient(35deg, #ffd900, hsl(34, 100%, 50%));
+    }
+    .food{
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        box-shadow: 5px 5px 5px #888;
+        background: linear-gradient(-35deg, #c8000a, #97080f);
+        border-radius: 50%;
+        top: 10px;
+        right: 10px;
+    }
+    </style>
+</head>
+<body> 
+    <div class="pacman">
+    </div>
+    <div class="food"></div>
+</body>
+</html>

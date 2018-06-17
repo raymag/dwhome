@@ -1,0 +1,3 @@
+qf1 e qf2 são os arquivos de formulário das questões 1 e 2 sobre vetores associativos, respectivamente.
+
+Já q1 e q2 são os respectivos códigos/algoritimos em php.
