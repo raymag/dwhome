@@ -1,0 +1,1 @@
+SELECT clubes.nome, Torcedores FROM clubes INNER JOIN (SELECT time_preferido, count(time_preferido) as Torcedores FROM pessoas GROUP BY time_preferido)t WHERE clubes.id = time_preferido ORDER BY Torcedores DESC
