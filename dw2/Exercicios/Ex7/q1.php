@@ -13,21 +13,27 @@
     <label>Nome: <input type="text" name="name"></label><br>
     <label>E-Mail: <input type="email" name="email"></label><br>
     <label>Senha: <input type="password" name="passwd"></label><br>
-    <label>CPF: <input type="text" name="cpf"></label><br>
+    <label>CPF: <input type="number" name="cpf"></label><br>
     <input type="submit" value="Confirmar"><br>
 </form>
 <?php
-include "functions/f1.inc.php";
+include "functions/uppername.inc.php";
+include "functions/mineight.inc.php";
+include "functions/iscpf.inc.php";
 
 if(isset($_POST["name"])){
+    $sucess = true;
+    if( !mineight($_POST["email"]) ){
+        $sucess = false;
+        echo "O email precisa de no mínimo 8 digitos <br/>";
+    }
+    if(!isCPF($_POST["cpf"]) ) {
+        $sucess = false;
+        echo "O CPF é inválido";
+    }
+    if($sucess){
+        echo "<center>Bem vindo ".uppername($_POST["name"]).", a operação foi Bem-Sucedida</center>";
 
-    if( mineight($_POST["email"]) 
-        && isCPF($_POST["cpf"]) ){
-
-        echo "<center>Operação Bem-Sucedida</center>";
-
-    }else{
-        echo "<center>Os dados não foram preenchidos corretamente</center>";
     }
 
 }
