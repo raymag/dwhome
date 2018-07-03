@@ -12,7 +12,7 @@
     <fieldset>
     <legend>Procurar Pessoas</legend>
     <label>Nome: 
-        <input list="namelist" name="nome" id="nameIn">
+        <input list="namelist" autocomplete="off" name="nome" id="nameIn">
     </label><br>
     <datalist id="namelist"></datalist>
     <table id="tb"></table>
