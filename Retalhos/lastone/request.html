@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="css/padrao.css">
+    <script>
+        function ajax(str){
+            console.log("eae");
+            if(str.length==0){
+                document.getElementById("answer").innerHTML = "";
+            }else{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                        document.getElementById("answer").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "request.php?data="+str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return false">
+    <p><label>Digite uma frase: <input type="text" name="data" onkeyup="ajax(this.value)"> </label></p>
+    </form>
+    <div>
+        <p>Resultado: <span id="answer"></span> </p>
+    </div>
+</body>
+</html>
