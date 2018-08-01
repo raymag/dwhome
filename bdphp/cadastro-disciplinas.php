@@ -18,6 +18,11 @@
 
     <input type="submit" value="Cadastrar">
     <input type="reset" value="Cancelar">
+    <div class="form_sublinks">
+         <ul type="none">
+            <li><a href="index.php">Voltar</a></li>
+        </ul>
+    </div>
     </fieldset>
     </form>
 

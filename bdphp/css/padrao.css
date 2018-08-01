@@ -1,5 +1,16 @@
+/*
+primary: #16A085
+secondary: #F4D03F
+*/
+*{
+  --primary: rgb(0, 130, 53);
+  --secondary: rgb(246, 92, 56);
+  --dark_secondary: rgb(216, 62, 26);
+  --light: #E5E5E5;
+  --yellow: #FFE000;
+}
 body{
-  background: #cdcdcd;
+  background: var(--primary);
   text-align: center;
   font-size: 2em;
   padding-top: 35px;
@@ -13,10 +24,25 @@ form{
   box-shadow: 3px 5px 8px #888;
   width: 60%;
   padding: 10px;
-  background: #dedede;
+  background: var(--light);
 }
 input{
   font-size: 20px;
+}
+input[type="text"],input[type="password"],
+input[type="email"],input[type="number"],
+select{
+  background: #222;
+  color: var(--yellow);
+}
+input[type="submit"], input[type="reset"]{
+  background: var(--secondary);
+  border-radius: 5px;
+  padding: 5px;
+}
+input[type="submit"]:hover, input[type="reset"]:hover{
+  color: var(--secondary);
+  background: var(--light);
 }
 th{
   background: #bcbcbc;
@@ -33,4 +59,21 @@ th, td, table{
 }
 a {
   text-decoration: none;
+}
+select{
+  font-size: 24px;
+}
+.form_sublinks{
+  text-align: left;
+}
+.form_sublinks a{
+  color: #222;
+  background: var(--dark_secondary);
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.form_sublinks a:hover{
+  color: var(--secondary);
+  background: #222;
 }

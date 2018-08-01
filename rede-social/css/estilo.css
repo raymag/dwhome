@@ -1,0 +1,181 @@
+/*Formatações css aqui */
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 16px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background: #f3f3f3
+}
+
+h2{
+  color: #b9c941;
+}
+
+p{
+  text-align: justify;
+  padding: 2 0 2 0;
+}
+textarea{
+  border-radius: 5px;
+  padding: 5px;
+}
+fieldset {
+	padding: 25px;
+	padding-left: 40px;
+	background: #f3f3f3;
+	width: 65%;
+	margin: 20px auto;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+	border: 1px solid #999;
+	}
+
+a{
+  text-decoration: none;
+  padding: 9px;
+}
+/*Formatando o Menu*/
+#menu a:link{
+  color: #838383
+}
+#menu a:visited{
+  color: #838383;
+}
+#menu a:hover{
+  color: #fff;
+  background: #b9c941;
+}
+#menu a:active{
+  color: #535353;
+}
+
+/*Formatando ID'S*/
+#navegacao{
+  background: #fff;
+  border-bottom: 1px solid #d8d8d8;
+  height: 45px;
+}
+#area{
+  width: 820px;
+  margin: 0 auto;
+}
+
+#area-principal{
+  width: 820px;
+  margin: 10px auto 10px auto;
+}
+#postagem{
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#menu{
+  float: right;
+  padding: 10px 0 10px 0;
+}
+#logo{
+  float: left;
+}
+
+/*Formatando Classes*/
+.verde{
+  color: #b9c941;
+}
+.data-postagem{
+  font-size: 14px;
+  border-bottom: 1px solid #f4f4f4;
+  display: block;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.img-postagem{
+  float: left;
+  margin: 0 10px 5px 0;
+}
+.postado-por{
+  border-left: 5px solid #d8d8d8;
+  padding-left: 5px;
+  display: block;
+  margin-top: 10px;
+}
+/*limpando elementos flutuantes*/
+.clear{
+		clear: both;
+}
+
+/* formatando o formulário*/
+input[type="text"],input[type="email"],input[type="password"]{
+    background-color:#f2f2f2;
+    border:1px solid #000;
+    padding:2px;
+    border-radius: 3px;
+}
+
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+    background-color:#e1e1e1;
+    border:1px solid #333;
+    padding:2px;
+}
+
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
+    background-color:#F8F8FF;
+    border:1px solid #900;
+    padding:3px;
+}
+/* Formatações Extras */
+
+input[type="submit"],input[type="reset"]{
+  padding: 8px;
+  margin-top: 5px;
+  background: #b9c941;
+  background: linear-gradient(45deg, #9aa53ad0, #b9c941c5);
+  border-radius: 50% 10% 50%;
+  outline: none;
+}
+input[type="submit"]:hover,input[type="reset"]:hover{
+  background: #95a13a;
+  background: linear-gradient(45deg, #676e28d0, #747e28c5);
+}
+.highlight{
+  padding:5px;
+  background: #b9c941;
+  text-align: center;
+}
+.redhighlight{
+  padding:5px;
+  background: #ec9191;
+  text-align: center;
+}
+/**/
+
+/*FORMATAÇÃO DO ARQUIVO DAS POSTAGENS.*/
+#div-area-principal{
+  width: 920px;
+  margin: 10px auto 10px auto;
+}
+#div-pessoal{
+  background: #fff;
+  width: 230px;
+  padding: 10px;
+  color: gray;
+  margin: 0 8px 10px 0;
+  float: left;
+}
+#div-postagem{
+  background: #fff;
+  width: 460px;
+  padding: 10px;
+  margin: 0 8px 10px 0;
+  float: left
+}
+
+#div-procurar-pessoa{
+  background: #fff;
+  padding: 10px;
+  margin: 0px auto 10px auto;
+  float: left;
+
+}
+/*fim da formatação do arquivo de postagem de mensagem */
