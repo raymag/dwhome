@@ -1,4 +1,6 @@
 <form action="" method="post">
+<fieldset>
+    <legend>Entrar</legend>
 <label>Modo:<select name="modo" id="">
     <option value="aluno">Aluno</option>
     <option value="admin">Administrador</option>
@@ -7,12 +9,13 @@
 <label>Senha: <input type="password" name="passwd" id=""></label><br>
 <input type="submit" value="Entrar">
 <input type="reset" value="Cancelar">
-<div class="form_sublinks">
+<!-- <div class="form_sublinks">
     <ul type="none">
         <li><a href="cadastro-alunos.php">Cadastrar Aluno</a></li>
         </li><a href="cadastro-disciplinas.php">Cadastrar Disciplinas</a></li>
     </ul>
-</div>
+</div> -->
+</fieldset>
 </form>
 <?php
 include_once "inc/conexao.php";
@@ -42,6 +45,7 @@ if(isset( $_POST["modo"] )){
         $senha = md5($_POST["passwd"]);
 
         $sql = "SELECT * FROM administrador WHERE cpf_adm = '$cpf' AND senha_adm = '$senha'";
+        // echo $sql;
         $conn = conexao();
         $query = mysqli_query($conn, $sql);
         if($query){

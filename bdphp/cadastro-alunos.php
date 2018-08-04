@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION["cod_adm"])){
+    header("Location:index.php");
+}
+include "inc/conexao.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Carlos Magno">
-    <title>Cadastrar Aluno</title>
+    <title>IFSYS - Cadastrar Aluno</title>
     <link rel="stylesheet" href="css/padrao.css">
 </head>
 <body>
+<div id="main-area">
+    <?php
+    include "inc/menu_adm_logged.php";
+    ?>
     <form method="post">
     <fieldset>
     <legend>Cadastrar Aluno</legend>
@@ -27,8 +38,6 @@
     </fieldset>
     </form>
 <?php
-include "inc/conexao.php";
-
 if( isset($_POST["nome"]) ){
     $nome = $_POST["nome"];
     $senha = $_POST["senha"];
@@ -39,13 +48,24 @@ if( isset($_POST["nome"]) ){
 
     $conn = conexao();
 
-    $sql = "INSERT INTO alunos(nome, senha, cpf, endereco) VALUES ('$nome', '$senha', $cpf, '$endereco')";
-    if( mysqli_query($conn, $sql) ){
-        echo "Cadastro realizado com sucesso.";
-    }else{
-        echo "Falha ao realizar cadastro.";
+    $sql = "SELECT * FROM alunos WHERE cpf = '$cpf'";
+    if($query = mysqli_query($conn, $sql)){
+        $data = mysqli_fetch_array($query);
+        if(isset($data["cpf"])){
+            echo "Este CPF já está em uso.";
+        }else{
+
+            $sql = "INSERT INTO alunos(nome, senha, cpf, endereco) VALUES ('$nome', '$senha', $cpf, '$endereco')";
+            if( mysqli_query($conn, $sql) ){
+                echo "Cadastro realizado com sucesso.";
+            }else{
+                echo "Falha ao realizar cadastro.";
+            }
+
+        }
     }
 }
 ?>
+</div>
 </body>
 </html>

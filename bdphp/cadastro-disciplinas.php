@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["cod_adm"])){
+    header("Location:index.php");
+}
+include "inc/conexao.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Carlos Magno">
-    <title>Cadastrar Disciplina</title>
+    <title>IFSYS - Cadastrar Disciplina</title>
     <link rel="stylesheet" href="css/padrao.css">
 </head>
 <body>
+<div id="main-area">
+    <?php
+    include "inc/menu_adm_logged.php";
+    ?>
     <form method="post">
     <fieldset>
     <legend>Cadastrar Disciplina</legend>
@@ -27,8 +38,6 @@
     </form>
 
 <?php
-include "inc/conexao.php";
-
 if( isset($_POST["cod_disc"]) ){
     $cod_disc = $_POST["cod_disc"];
     $nome_disc = $_POST["nome_disc"];
@@ -44,5 +53,6 @@ if( isset($_POST["cod_disc"]) ){
     }
 }
 ?>
+</div>
 </body>
 </html>
