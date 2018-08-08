@@ -2,7 +2,7 @@
 session_start();
 include_once "conexao.php";
 if ( !isset($_SESSION["codigo"])){
-	header("location:index_erro.php?erro=2");
+	header("location:erro.php?er=2");
 }
 $id_usuario = $_SESSION["codigo"];
 ?>

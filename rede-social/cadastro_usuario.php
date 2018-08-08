@@ -17,7 +17,7 @@
 			<form method="post" action="">
 				<fieldset>
 				<p>
-					<label>Nome do usuario:</label>
+					<label>Nome do usuário:</label>
 					<input type="text" name="usuario" id="usuario"/>
 				</p>
 				<p>

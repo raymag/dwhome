@@ -29,7 +29,7 @@ if( isset($_POST["email"]) ){
        header("location: login_correto.php");
     }else{
         // echo "<p class='redhighlight'>Dados incorretos.</p>";
-        header("Location: erro.php?er=wrongdata");
+        header("Location: erro.php?er=1");
     }
 }
 ?>

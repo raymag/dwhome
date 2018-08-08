@@ -11,8 +11,13 @@
 <?php
 if($_GET["er"]){
     switch ($_GET["er"]){
-        case "wrongdata":
-            echo "<p class='redhighlight'>Dados incorretos.</p>";
+        case "1":
+            echo "<p class='redhighlight'>Dados incorretos. 
+            <a href='index.php'> Tentar novamente.</a></p>";
+            break;
+        case "2":
+            echo "<p class='redhighlight'>É necessário estar logado para acessar esta página.
+            <a href='index.php'>Fazer login.</a></p>";
             break;
     }
 }
