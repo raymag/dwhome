@@ -19,7 +19,15 @@ $id_usuario = $_SESSION["codigo"];
 </head>
 <body>
 
-	<?php include "includes/menu-login.php" ?>
+	<?php 
+	include_once "includes/menu-login.php";
+	include_once "conexao.php";
+	$conn = conecta_mysql();
+	$userId = $_SESSION["codigo"];
+	$sql = "SELECT COUNT(*) as n FROM postagem WHERE id_usuario = '$userId' ";
+	$query = mysqli_query($conn, $sql);
+	$data = mysqli_fetch_array($query, MYSQLI_ASSOC);
+	?>
 
 	<div id="div-area-principal">
 		<div id="div-pessoal" class="borda-arredondada">
@@ -30,7 +38,7 @@ $id_usuario = $_SESSION["codigo"];
 			<center>
 				<table>
 					<tr>
-						<td width="100px" >TWEETS <br/> 0</td>
+						<td width="100px" >TWEETS <br/> <?php echo $data["n"] ?></td>
 						<td width="100px">SEGUIDORES <br/> 0</td>
 					</tr>
 				</table>
@@ -46,7 +54,17 @@ $id_usuario = $_SESSION["codigo"];
 				<input type="reset" value="Cancelar"/>
 			</form>
 			<?php
-			//código PHP aqui!
+			if(isset($_POST["mensagem"]) && (strlen($_POST["mensagem"])>1)){
+				$msg = $_POST["mensagem"];
+				include_once "conexao.php";
+				$conn = conecta_mysql();
+				$sql = "INSERT INTO postagem (id_usuario,texto_postagem) VALUES ('$userId', '$msg')";
+				if($query = mysqli_query($conn, $sql)){
+					echo "<script>alert('Mensagem Inserida')</script>";
+				}else{
+					echo "<script>alert('Mensagem Não Inserida')</script>";
+				}
+			}
 
 			?>
 		</div>
