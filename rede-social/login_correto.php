@@ -24,9 +24,12 @@ $id_usuario = $_SESSION["codigo"];
 	include_once "conexao.php";
 	$conn = conecta_mysql();
 	$userId = $_SESSION["codigo"];
-	$sql = "SELECT COUNT(*) as n FROM postagem WHERE id_usuario = '$userId' ";
+	$sql = "SELECT * FROM postagem WHERE id_usuario = '$userId' ";
 	$query = mysqli_query($conn, $sql);
-	$data = mysqli_fetch_array($query, MYSQLI_ASSOC);
+	$postagens = array();
+	while($data = mysqli_fetch_array($query, MYSQLI_ASSOC)){
+		$postagens[] = $data;
+	}
 	?>
 
 	<div id="div-area-principal">
@@ -38,7 +41,7 @@ $id_usuario = $_SESSION["codigo"];
 			<center>
 				<table>
 					<tr>
-						<td width="100px" >TWEETS <br/> <?php echo $data["n"] ?></td>
+						<td width="100px" >TWEETS <br/> <?php echo count($postagens) ?></td>
 						<td width="100px">SEGUIDORES <br/> 0</td>
 					</tr>
 				</table>
@@ -47,7 +50,7 @@ $id_usuario = $_SESSION["codigo"];
 		<div id="div-postagem" class="borda-arredondada">
 			<form method="post" action="">
 				<p>
-					<textarea id="mensagem" name="mensagem" maxlength="140" cols="50" rows="4"
+					<textarea id="mensagem" required name="mensagem" maxlength="140" cols="50" rows="4"
 					placeholder="<?php print "O que você vai postar hoje?"?>"></textarea>
 				</p>
 				<input type="submit" value="Postar"/>
@@ -60,7 +63,8 @@ $id_usuario = $_SESSION["codigo"];
 				$conn = conecta_mysql();
 				$sql = "INSERT INTO postagem (id_usuario,texto_postagem) VALUES ('$userId', '$msg')";
 				if($query = mysqli_query($conn, $sql)){
-					echo "<script>alert('Mensagem Inserida')</script>";
+					//echo "<script></script>";
+					header("Refresh:0");
 				}else{
 					echo "<script>alert('Mensagem Não Inserida')</script>";
 				}
