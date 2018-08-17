@@ -1,0 +1,12 @@
+CREATE TABLE usuario(
+    id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(32)
+);
+CREATE TABLE mensagem(
+    id_mensagem INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL,
+    texto TEXT,
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP
+);

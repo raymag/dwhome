@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* --primaryColor: rgb(124, 56, 220); */
+    --primaryColor: rgb(61, 139, 255);
+    --darkPrimaryColor: rgb(48, 108, 197);
+    --secondaryColor: rgba(255, 196, 35, 0.89);
+    --darkSecondaryColor: rgb(194, 146, 26);
+    --darkColor: #222;
+    --grayColor: #cdcdcd;
+    --lightColor: #f5f5f5;
+    --lightBlueColor: rgb(62, 113, 201);
+    --bodyColor: #ddd;
+}
+body{
+    background: var(--bodyColor);
+}
+#menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 875px;
+    background: var(--primaryColor);
+    padding: 5px;
+    box-shadow: -2px 5px 5px #323232;
+}
+#menu-area{
+    width: 90%;
+    margin: 10px auto;
+}
+#menu-area img{
+    -webkit-user-drag: none;
+}
+#logo{
+    float: left;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--lightColor);
+    user-select: none;
+}
+#menu-links{
+    float: right;
+}
+#menu-links li{
+    display: inline;
+    padding: 0;
+    margin: 5px;
+}
+#menu-links a{
+    /* background: var(--secondaryColor); */
+    padding: 10px 5px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    /* text-decoration: none;
+    color: var(--darkColor); */
+}
+#area-principal{
+    margin: auto;
+    margin-top: 60px;
+    width: 70%;
+    /* background: var(--grayColor); */
+}
+/* ______________________________________ */
+#login-form{
+    padding: 25px;
+    border-radius: 5px;
+    /* background: var(--grayColor); */
+}
+#login-form, #login-form input{
+    font-size: 20px;
+}
+#login-form input{
+    margin: 2px;
+}
+fieldset{
+    padding: 2px;
+}
+input{
+    color: var(--darkSecondaryColor);
+    border-radius: 5px;
+}
+/* ______________________________ */
+.bloco{
+    background:  var(--lightColor);
+    padding: 10px;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #aaa;
+}
+textarea{
+    resize: none;
+}
+a, input[type="submit"], input[type="reset"]{
+    background: var(--secondaryColor);
+    padding: 0px 8px;
+    margin: 2px;
+    border-radius: 15px 5px;
+    color: var(--darkColor);
+    text-decoration: none;
+    box-shadow: 0 2px 2px #aaa;
+    outline: none;
+}
+a:hover{
+    background: var(--darkColor);
+    color: var(--secondaryColor)
+}
+a:active{
+    color:var(--lightColor);
+}
+/* ____________________________________________ */
+p{
+    font-size: 18px;
+}
+.search-data-text{
+    font-size: 20px;
+}
