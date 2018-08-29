@@ -2,7 +2,7 @@
 	function conecta_mysql(){
 		$host = "localhost";
 		$usuario = "root";
-		$senha = "";
+		$senha = "root";
 		$nome_bd = "php01";
 
 		$conexao = mysqli_connect($host,$usuario,$senha,$nome_bd);

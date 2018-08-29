@@ -22,6 +22,7 @@
 		<div id="postagem" class="clear">
 			<a href="alterar_usuario_nome.php">Alterar Nome do Usuário</a><br/><br/>
 			<a href="alterar_usuario_senha.php">Alterar Senha do Usuário</a><br/><br/>
+			<a href="alterar_usuario_email.php">Alterar Email do Usuário</a><br/><br>
 			<a href="alterar_postagens.php">Alterar Postagens</a><br/><br/>
 			<a href="excluir_postagens-1.php">Excluir Postagens (Digitando Código)</a><br/><br/>
 			<a href="excluir_postagens-2.php">Excluir Postagens (Automático)</a><br/>
