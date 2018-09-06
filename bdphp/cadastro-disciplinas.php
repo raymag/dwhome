@@ -45,11 +45,19 @@ if( isset($_POST["cod_disc"]) ){
     
     $conn = conexao();
 
-    $sql = "INSERT INTO disciplinas (cod_disc, nome_disc, carga_hor) VALUES ('$cod_disc', '$nome_disc', $carga_hor)";
-    if( mysqli_query($conn, $sql) ){
-        echo "Cadastro realizado com sucesso.";
+    $sql = "SELECT * FROM disciplinas WHERE cod_disc = '$cod_disc'";
+    $query = mysqli_query($conn, $sql);
+    $dados = mysqli_fetch_array($query);
+    if(isset($dados["cod_disc"])){
+        echo "Este código já está em uso";
     }else{
-        echo "Falha ao realizar cadastro.";
+        $sql = "INSERT INTO disciplinas (cod_disc, nome_disc, carga_hor) VALUES ('$cod_disc', '$nome_disc', $carga_hor)";
+        // echo $sql;
+        if( mysqli_query($conn, $sql) ){
+            echo "Cadastro realizado com sucesso.";
+        }else{
+            echo "Falha ao realizar cadastro.";
+        }
     }
 }
 ?>
