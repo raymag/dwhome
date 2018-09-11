@@ -12,6 +12,7 @@ if(!isset($_SESSION["codigo"])){
 	<meta name="description" content="Descrição"/>
 	<meta name="keywords" content="Palavras, chaves"/>
 	<title>PHP com BD</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
@@ -36,7 +37,7 @@ if(!isset($_SESSION["codigo"])){
 				echo "<br>Código do Usuário: ".$msg["id_usuario"];
 				echo "<br>Texto do Postagem: ".$msg["texto_postagem"];
 				echo "<br>Data da Postagem: ".$msg["data_inclusao"];
-				echo "<br><a href='alterar_postagens_confirmar.php?id=".$msg["id_postagem"]."'>Alterar</a>";
+				echo "<br><a class='green-link' href='alterar_postagens_confirmar.php?id=".$msg["id_postagem"]."'><i class='fas fa-edit'></i></a>";
 				echo "</div>";
 			}
 			//cada postagem deverá ter o link para alterar a postagem, passando o id para o arquivo alterar_postagens_confirmar.php

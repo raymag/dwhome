@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ( !isset($_SESSION["codigo"])){
+	header("location:erro.php?er=2");
+}
+?>
 <!DOCTYPE html!>
 <html lang="pt-br">
 <head>
@@ -13,8 +19,19 @@
 	<div id="div-area-principal">
 		<div id="postagem" class="clear">
 			<?php
-			//Código para deixar de seguir a pessoa aqui
+			if(isset($_GET["codigo"])){
+				$id_usuario_seguir = $_GET["codigo"];
+				$id_usuario = $_SESSION["codigo"];
+				include_once "conexao.php";
+				$conn = conecta_mysql();
 
+				$sql = "DELETE FROM usuarios_seguidores WHERE id_usuario = '$id_usuario' AND seguindo_id_usuario = '$id_usuario_seguir'";
+				if(mysqli_query($conn, $sql)){
+					echo "<p>Agora você deixou de seguir este usuário</p>";
+				}else{
+					echo "<p>Falha ao deixar de seguir usuário</p>";
+				}
+			}
 			?>
 		</div>
 
