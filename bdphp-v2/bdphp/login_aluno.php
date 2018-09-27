@@ -27,9 +27,36 @@ echo "<p style='float:left'>".getDayMoment()." "
 ?>
 <br>
 <br>
-<table>
-
+</div><br>
+<div class="section">
+<center>
+<table class="list-table">
+<tr>
+<th>Disciplina</th>
+<th>Carga Horária</th>
+</tr>
+<?php
+include_once "inc/conexao.php";
+$conn = conexao();
+$matricula = $_SESSION["matricula"];
+$sql = "SELECT * FROM matricula_aluno JOIN disciplinas ON cod_disciplina = disciplinas.cod_disc WHERE cod_aluno = $matricula";
+if($query = mysqli_query($conn, $sql)){
+    $v = "list-table-v1";
+    while($row = mysqli_fetch_assoc($query)){
+        echo "<tr>";
+        echo "<td class='$v'>".$row["nome_disc"]."</td>";
+        echo "<td class='$v'>".$row["carga_hor"]."</td>";
+        echo "</tr>";
+        if($v == "list-table-v1"){
+            $v = "list-table-v2";
+       }else{
+           $v = "list-table-v1";
+       }
+    }
+}
+?>
 </table>
+</center>
 </div>
 </div>
 </body>

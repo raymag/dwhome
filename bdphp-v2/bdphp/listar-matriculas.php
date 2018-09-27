@@ -33,15 +33,24 @@ if(isset($_POST["cod_disciplina"])){
     $conn = conexao();
     $sql = "SELECT alunos.nome, alunos.matricula FROM matricula_aluno INNER JOIN alunos ON cod_aluno = alunos.matricula 
     WHERE cod_disciplina = '$cod_disc'";
+    $v = "list-table-v1";
     if($query = mysqli_query($conn, $sql)){
-        if(isset(mysqli_fetch_assoc($query)["matricula"])){
+        if($row = mysqli_fetch_assoc($query)){
             echo "<th colspan='2'>$cod_disc</th></tr><tr>
             <th>ID</th>
             <th>Aluno</th>";
+            echo "<tr>";
+            echo "<td class='$v'>".$row["matricula"]."</td>";
+            echo "<td class='$v'>".$row["nome"]."</td>";
+            echo "</tr>";
+            if($v == "list-table-v1"){
+                 $v = "list-table-v2";
+            }else{
+                $v = "list-table-v1";
+            }
         }else{
             echo "<h3>Não há nenhum aluno cadastrado na disciplina de código <b>$cod_disc</b></h3>";
         }
-        $v = "list-table-v1";
         while($row = mysqli_fetch_assoc($query)){
             echo "<tr>";
             echo "<td class='$v'>".$row["matricula"]."</td>";
