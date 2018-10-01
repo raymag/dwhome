@@ -24,7 +24,7 @@ if(!isset($_SESSION["codigo"])){
 		$id_usuario = $_SESSION["codigo"];
 		include "conexao.php";
 		$conn = conecta_mysql();
-		$sql = "SELECT * FROM postagem WHERE id_usuario = '$id_usuario' ORDER BY data_inclusao DESC";
+		$sql = "SELECT id_postagem, texto_postagem, id_usuario, date_format(data_inclusao, '%d, %b, %Y, %T') as data_formato  FROM postagem WHERE id_usuario = '$id_usuario' ORDER BY data_inclusao DESC";
 		$query = mysqli_query($conn, $sql);
 		$msgs = array();
 		while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){
@@ -35,7 +35,7 @@ if(!isset($_SESSION["codigo"])){
 			echo "Código da Postagem: ".$msg["id_postagem"];
 			echo "<br>Código do Usuário: ".$msg["id_usuario"];
 			echo "<br>Texto do Postagem: ".$msg["texto_postagem"];
-			echo "<br>Data da Postagem: ".$msg["data_inclusao"];
+			echo "<br>Data da Postagem: ".$msg["data_formato"];
 			echo "</div>";
 		}
 		?>

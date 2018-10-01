@@ -30,6 +30,12 @@ $id_usuario = $_SESSION["codigo"];
 	while($data = mysqli_fetch_array($query, MYSQLI_ASSOC)){
 		$postagens[] = $data;
 	}
+	$sql = "SELECT * FROM usuarios_seguidores WHERE seguindo_id_usuario = '$userId'";
+	$query = mysqli_query($conn, $sql);
+	$seguidores = array();
+	while($data = mysqli_fetch_array($query, MYSQLI_ASSOC)){
+		$seguidores[] = $data;
+	}
 	?>
 
 	<div id="div-area-principal">
@@ -42,7 +48,7 @@ $id_usuario = $_SESSION["codigo"];
 				<table>
 					<tr>
 						<td width="100px" >TWEETS <br/> <?php echo count($postagens) ?></td>
-						<td width="100px">SEGUIDORES <br/> 0</td>
+						<td width="100px">SEGUIDORES <br/> <?php echo count($seguidores) ?></td>
 					</tr>
 				</table>
 			</center>
@@ -80,6 +86,25 @@ $id_usuario = $_SESSION["codigo"];
 		<div id="postagem" class="clear">
 			<?php print"Hoje é ".date("d/M/Y").", horário atual: ".date("H:i");?>
 		</div>
+		<?php
+		$sql = "SELECT usuarios.usuario, postagem.texto_postagem, date_format(postagem.data_inclusao, '%d, %b, %Y, %T')
+		 as data_formatada FROM postagem JOIN usuarios ON (usuarios.codigo=postagem.id_usuario)
+		 WHERE id_usuario='$id_usuario' OR id_usuario IN (SELECT seguindo_id_usuario FROM usuarios_seguidores WHERE id_usuario=$id_usuario)
+		 ORDER BY postagem.data_inclusao DESC";
+		if($query = mysqli_query($conn, $sql)){
+			$msgs = array();
+			while($row = mysqli_fetch_assoc($query)){
+				$msgs[] = $row;
+			}
+			foreach($msgs as $msg){
+				echo "<div id='postagem' class='clear tamanho-450'>";	
+				echo "<p><i>".$msg["data_formatada"]."</i></p>";
+				echo "<p><b>".$msg["usuario"]."</b></p>";
+				echo "<p>".$msg["texto_postagem"]."</p>";
+				echo "</div>";
+			}
+		}
+		?>
 	</div> <!-- Div Área principal -->
 </body>
 </html>
