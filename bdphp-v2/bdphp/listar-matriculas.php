@@ -14,6 +14,7 @@ include "inc/conexao.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IFSYS</title>
     <link rel="stylesheet" href="css/padrao.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="main-area">
@@ -22,7 +23,7 @@ include "inc/menu_adm_logged.php";
 ?>
 <div class="section">
 <form method="post">
-<label>Disciplina: <input type="text" placeholder="Insira o código da disciplina" name="cod_disciplina" id=""></label>
+<label>Disciplina: <input type="text" autofocus placeholder="Insira o código da disciplina" name="cod_disciplina" id=""></label>
 <input type="submit" value="Visualizar">
 </form>
 <center>

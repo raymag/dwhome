@@ -14,6 +14,7 @@ include "inc/conexao.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IFSYS</title>
     <link rel="stylesheet" href="css/padrao.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="main-area">
@@ -92,7 +93,7 @@ include "inc/menu_adm_logged.php";
 <br>
 <center>
 <form method="post">
-        <label>Código do Aluno: <input type="number" name="cod_aluno" id=""></label><br>
+        <label>Código do Aluno: <input type="number" autofocus name="cod_aluno" id=""></label><br>
         <label>Código da Disciplina: <input type="text" name="cod_disc" id=""></label><br>
         <input type="submit" value="Matricular">
         <input type="reset" value="Cancelar">
@@ -109,13 +110,20 @@ if(isset($_POST["cod_aluno"][0]) && isset($_POST["cod_disc"][0])){
         if($query = mysqli_query($conn, $sql)){
             $data_disc = mysqli_fetch_assoc($query);
             if(isset($data_aluno["matricula"]) && isset($data_disc["cod_disc"])){
-                $sql = "INSERT INTO matricula_aluno (cod_aluno, cod_disciplina) VALUES ('$cod_aluno', '$cod_disc')";
-                if(mysqli_query($conn, $sql)){
-                    echo "<script>alert('Aluno matriculado')</script>";
-                }else{
-                    echo "<script>alert('Falha ao matricular aluno')</script>";
+                $sql = "SELECT * FROM matricula_aluno WHERE cod_aluno = ".$cod_aluno." AND cod_disciplina = '$cod_disc'";
+                if($query = mysqli_query($conn, $sql)){
+                    $data = mysqli_fetch_assoc($query);
+                    if(!isset($data["cod_aluno"])){
+                        $sql = "INSERT INTO matricula_aluno (cod_aluno, cod_disciplina) VALUES ('$cod_aluno', '$cod_disc')";
+                        if(mysqli_query($conn, $sql)){
+                            echo "<script>alert('Aluno matriculado')</script>";
+                        }else{
+                            echo "<script>alert('Falha ao matricular aluno')</script>";
+                        }
+                    }else{
+                        echo "<script>alert('O aluno já está matriculado')</script>";
+                    }
                 }
-
             }else{
                 echo "<script>alert('Aluno ou disciplina inexistente')</script>";
             }

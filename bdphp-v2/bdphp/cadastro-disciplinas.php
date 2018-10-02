@@ -14,6 +14,7 @@ include "inc/conexao.php";
     <meta name="author" content="Carlos Magno">
     <title>IFSYS - Cadastrar Disciplina</title>
     <link rel="stylesheet" href="css/padrao.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="main-area">

@@ -14,6 +14,7 @@ include "inc/conexao.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IFSYS - Alunos</title>
     <link rel="stylesheet" href="css/padrao.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <div id="main-area">

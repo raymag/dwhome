@@ -14,6 +14,7 @@ include_once "functions/getDayMoment.php";
     <meta name="author" content="Carlos Magno">
     <title>IFSYS - Aluno</title>
     <link rel="stylesheet" href="css/padrao.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 <?php 

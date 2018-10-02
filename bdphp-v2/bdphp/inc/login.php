@@ -5,7 +5,7 @@
     <option value="aluno">Aluno</option>
     <option value="admin">Administrador</option>
 </select></label><br>
-<label>CPF: <input type="number" name="cpf" id=""></label><br>
+<label>CPF: <input type="number" autofocus required name="cpf" id=""></label><br>
 <label>Senha: <input type="password" name="passwd" id=""></label><br>
 <input type="submit" value="Entrar">
 <input type="reset" value="Cancelar">

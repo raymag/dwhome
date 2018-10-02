@@ -13,6 +13,7 @@ if(isset($first_name[11])){
             <a href="cadastro-alunos.php">Adicionar Aluno</a>
             <a href="listar-disciplinas.php">Listar Disciplinas</a>
             <a href="cadastro-disciplinas.php">Cadastrar Disciplinas</a>
+            <a href="cadastro_adm.php">Cadastrar Administrador</a>
             <a href="matricular-aluno.php">Matricular Aluno</a>
             <a href="listar-matriculas.php">Listar Matrículas</a>
             <a href="logout.php">Sair</a>
