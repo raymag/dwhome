@@ -50,7 +50,7 @@ $id_usuario = $_SESSION["codigo"];
 					$sql = "DELETE FROM postagem WHERE id_postagem = '$codigo'";
 					if(mysqli_query($conn, $sql)){
 						echo "<script>alert('Postagem apagada com sucesso.')</script>";
-						header("location:minhas_postagens.php");
+						// header("location:minhas_postagens.php");
 					}else{
 						echo "<script>alert('Erro ao apagar postagem.')</script>";
 					}
